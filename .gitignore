@@ -1,2 +1,7 @@
 *.DS_Store
 /bin/
+**/debug/eval_expression_test
+**/debug/parse_expression_test
+*.passed
+*.o
+
