@@ -20,15 +20,11 @@ namespace fun { namespace ast
     {
     public:
 
-        typedef std::function<
-            void(x3::position_tagged, std::string const&)>
-        error_handler_type;
+        typedef std::function<void(x3::position_tagged, std::string const&)> error_handler_type;
 
-        template <typename ErrorHandler>
-        interpreter(ErrorHandler const& error_handler);
+        template <typename ErrorHandler> interpreter(ErrorHandler const& error_handler);
 
-        template <typename F>
-        void add_function(std::string name, F f);
+        template <typename F> void add_function(std::string name, F f);
 
         float eval(ast::expression const& ast);
 
@@ -59,8 +55,7 @@ namespace fun { namespace ast
     {
         std::size_t const max_arity = 5;
 
-        template <typename T>
-        struct arity : arity<decltype(&T::operator())> {};
+        template <typename T> struct arity : arity<decltype(&T::operator())> {};
 
         template <typename F, typename RT, typename ...Args>
         struct arity<RT(F::*)(Args...) const>

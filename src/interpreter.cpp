@@ -86,7 +86,7 @@ namespace fun { namespace ast { namespace
         double r = boost::apply_visitor(*this, ast.first);
         for (auto const& oper : ast.rest)
             r = (*this)(r, oper);
-         return r;
+        return r;
     }
 
     // INTERPRETER_FUNCTION_CALL_VISIT_BEGIN

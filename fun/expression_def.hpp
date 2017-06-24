@@ -33,51 +33,33 @@ namespace fun { namespace parser
     // EXPRESSION_DEF1_VISIT_END
 
     // EXPRESSION_DEF2_VISIT_BEGIN
-    typedef x3::rule<additive_expr_class, ast::expression>
-    additive_expr_type;
+    typedef x3::rule<additive_expr_class, ast::expression> additive_expr_type;
 
-    typedef
-        x3::rule<multiplicative_expr_class, ast::expression>
-    multiplicative_expr_type;
+    typedef x3::rule<multiplicative_expr_class, ast::expression> multiplicative_expr_type;
 
-    typedef
-        x3::rule<unary_expr_class, ast::operand>
-    unary_expr_type;
+    typedef x3::rule<unary_expr_class, ast::operand> unary_expr_type;
 
-    typedef
-        x3::rule<primary_expr_class, ast::operand>
-    primary_expr_type;
+    typedef x3::rule<primary_expr_class, ast::operand> primary_expr_type;
 
-    typedef
-        x3::rule<argument_list_class, std::list<ast::expression>>
-    argument_list_type;
+    typedef x3::rule<argument_list_class, std::list<ast::expression>> argument_list_type;
 
-    typedef
-        x3::rule<function_call_class, ast::function_call>
-    function_call_type;
+    typedef x3::rule<function_call_class, ast::function_call> function_call_type;
     // EXPRESSION_DEF2_VISIT_END
 
     // EXPRESSION_DEF3_VISIT_BEGIN
-    expression_type const
-        expression = "expression";
+    expression_type const expression = "expression";
 
-    additive_expr_type const
-        additive_expr = "additive_expr";
+    additive_expr_type const additive_expr = "additive_expr";
 
-    multiplicative_expr_type const
-        multiplicative_expr = "multiplicative_expr";
+    multiplicative_expr_type const multiplicative_expr = "multiplicative_expr";
 
-    unary_expr_type const
-        unary_expr = "unary_expr";
+    unary_expr_type const unary_expr = "unary_expr";
 
-    primary_expr_type const
-        primary_expr = "primary_expr";
+    primary_expr_type const primary_expr = "primary_expr";
 
-    argument_list_type const
-        argument_list = "argument_list";
+    argument_list_type const argument_list = "argument_list";
 
-    function_call_type const
-        function_call = "function_call";
+    function_call_type const function_call = "function_call";
     // EXPRESSION_DEF3_VISIT_END
 
     // EXPRESSION_DEF4_VISIT_BEGIN
@@ -136,8 +118,7 @@ namespace fun { namespace parser
     struct primary_expr_class : annotation_base {};
     struct function_call_class : annotation_base {};
 
-    struct expression_class :
-        annotation_base, error_handler_base {};
+    struct expression_class : annotation_base, error_handler_base {};
     // EXPRESSION_DEF7_VISIT_END
 }}
 

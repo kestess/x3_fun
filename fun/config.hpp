@@ -17,9 +17,7 @@ namespace fun { namespace parser
     typedef std::string::const_iterator iterator_type;
 
     // The Phrase Parse Context
-    typedef
-        x3::phrase_parse_context<x3::ascii::space_type>::type
-    phrase_context_type;
+    typedef x3::phrase_parse_context<x3::ascii::space_type>::type phrase_context_type;
 
     // Our Error Handler
     typedef error_handler<iterator_type> error_handler_type;

@@ -53,16 +53,14 @@ namespace fun { namespace parser
     annotation_base::on_success(Iterator const& first, Iterator const& last
       , ast::operand& ast, Context const& context)
     {
-        auto& error_handler
-            = x3::get<error_handler_tag>(context).get();
+        auto& error_handler = x3::get<error_handler_tag>(context).get();
 
         auto annotate = [&](auto& node)
         {
             error_handler.tag(node, first, last);
         };
 
-        ast.apply_visitor(
-            x3::make_lambda_visitor<void>(annotate));
+        ast.apply_visitor(x3::make_lambda_visitor<void>(annotate));
     }
     // ANNOTATION2_VISIT_END
 
