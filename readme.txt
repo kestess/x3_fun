@@ -5,3 +5,7 @@ export DYLD_LIBRARY_PATH=/Users/john/x3_fun/bin/darwin-4.2.1/debug:/Users/john/D
 
 Easiest way to declare BOOST_ROOT and BOOST_INSTALL without commitments:
 b2 -sBOOST_ROOT=/Users/john/Downloads/boost_1_64_0/ -sBOOST_INSTALL=/Users/john/Downloads/boost_install toolset=darwin
+
+This builds, but it's obvious that only BOOST_INSTALL should be used; however, that breaks and learning
+b2 wasn't today's goal anyway.
+
