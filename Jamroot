@@ -22,11 +22,11 @@ project
       <toolset>clang:<cxxflags>-ftemplate-depth-512
       <toolset>darwin:<cxxflags>-std=c++14
       <toolset>darwin:<cxxflags>-ftemplate-depth-512
-      <toolset>darwin:<cxxflags>-ftemplate-depth-512
+      <toolset>darwin:<cxxflags>-DBOOST_SYSTEM_NO_DEPRECATED
       <define>BOOST_SPIRIT_USE_PHOENIX_V3=1
       <use>/boost//headers
-      <include>.
-      <include>./fun
+      <include>$(BOOST_INSTALL)/include/
+      <library>$(BOOST_INSTALL)/lib/
    ;
 
 lib fun
