@@ -9,3 +9,7 @@ b2 -sBOOST_ROOT=/Users/john/Downloads/boost_1_64_0/ -sBOOST_INSTALL=/Users/john/
 This builds, but it's obvious that only BOOST_INSTALL should be used; however, that breaks and learning
 b2 wasn't today's goal anyway.
 
+World's worst "clean" since it isn't working:
+find . | grep "\.o" | xargs -I % rm  %
+
+
