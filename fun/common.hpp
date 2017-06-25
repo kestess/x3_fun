@@ -17,16 +17,24 @@ namespace fun { namespace parser
     using x3::alpha;
     using x3::alnum;
 
+    // JdG tag that identifies rule - first position below
     struct identifier_class;
 
     typedef x3::rule<identifier_class, std::string> identifier_type;
 
     identifier_type const identifier = "identifier";
 
+    // JdG raw directive gives you the first and last iterators
     auto const identifier_def = raw[lexeme[(alpha | '_') >> *(alnum | '_')]];
 
+    // JdG tie together identifier class with definition
     BOOST_SPIRIT_DEFINE(identifier);
     // COMMON_VISIT_END
 }}
 
 #endif
+
+// rule id         = identifier_class
+// rule type       = identifier_type
+// rule definition = identifier_def // required JdG
+// rule            = identifier     // required JdG

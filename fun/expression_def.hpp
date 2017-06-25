@@ -46,6 +46,7 @@ namespace fun { namespace parser
     typedef x3::rule<function_call_class, ast::function_call> function_call_type;
     // EXPRESSION_DEF2_VISIT_END
 
+    // JdG name the rules for debugging purposes
     // EXPRESSION_DEF3_VISIT_BEGIN
     expression_type const expression = "expression";
 
@@ -113,6 +114,7 @@ namespace fun { namespace parser
     );
     // EXPRESSION_DEF6_VISIT_END
 
+    // JdG annotation_base called when there is a successful parse
     // EXPRESSION_DEF7_VISIT_BEGIN
     struct unary_expr_class : annotation_base {};
     struct primary_expr_class : annotation_base {};
